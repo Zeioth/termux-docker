@@ -7,7 +7,7 @@ Just a script that setups everything for you. It is literally the same script yo
 
 * Setup Alpine VM in Termux with this one-line-install command (Thanks to egandro)
   ```
-  curl -o setup.sh https://github.com/Zeioth/termux-docker/blob/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
+  curl -o setup.sh https://raw.githubusercontent.com/Zeioth/termux-docker/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
   ```
   *This will take around 8 minutes to complete*
 
