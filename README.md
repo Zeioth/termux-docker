@@ -2,7 +2,6 @@
 Just a script that setups everything for you. It is literally the same script you have [here](https://github.com/mrp-yt/docker_and_portainer_on_dex), but it works and it is actively maintained.
 
 ## Portainer on DeX
-![Portainer_on_dex](/assets/images/portainer_on_dex.png)
 
 * This is a guide on how to setup Docker and Portainer on Samsung DeX (Android)
 * [Reddit post](https://www.reddit.com/r/SamsungDex/comments/pegoti/run_docker_containers_on_samsung_dex_bonus/)
