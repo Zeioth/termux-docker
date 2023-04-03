@@ -2,7 +2,7 @@
 This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm) and [this](https://github.com/mrp-yt/docker_and_portainer_on_dex), except it works and it is actively maintained.
 
 
-### How to use
+### How to use docker
 
   Create the virtual machine with
   
@@ -10,16 +10,18 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   curl -o setup.sh https://raw.githubusercontent.com/Zeioth/termux-docker/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
   ```
 
-  That's all. Now you can run qemu with:
+  Start the virtual machine with
   
   ``` sh
   # Login with user: root PASSWORD: groovy
   ~/alpine/startqemu.sh
   ```
+  
+  Inside this virtual machine you can use docker as you would do in a normal computer.
 
-### Extra things you might like
+### How to use portainer
 
-  Run portainer
+  Run it with
   ```
   # Run the container → Then open this URL in your browser to use it: http://localhost:9000
   docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running running 'docker ps'."
