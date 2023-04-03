@@ -87,7 +87,7 @@ expect "\[n\]"
 send "y\r"
 
 expect "loginname"
-send "no\"
+send "no\r"
 
 expect "Please reboot"
 send "halt\r"
