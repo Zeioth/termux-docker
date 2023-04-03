@@ -77,9 +77,6 @@ sleep 3
 expect "localhost:~#"
 send "setup-alpine -f answerfile\r"
 
-expect "loginname:"
-send "no\n"
-
 expect "password:"
 send "$env(ROOT_PASSWORD)\n"
 
