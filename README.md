@@ -37,4 +37,5 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 ## FAQ
 
 * **Where do I run the commands?** In [Termux](https://termux.dev/en/). You can download it from [F-Droid](https://www.f-droid.org/).
+* **I can't run portainer/kubernetes!** You need to setup docker first, follow the steps.
 * **It is really actively maintained?** Yes. Even if for some wild reason I don't have a lot of time to fix bugs myself, I tend to revise PRs quite fast.
