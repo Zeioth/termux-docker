@@ -14,7 +14,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   
   ``` sh
   # Login with user: root PASSWORD: groovy
-  $HOME/alpine/startqemu.sh
+  ~/alpine/startqemu.sh
   ```
 
 ### Extra things you might like
