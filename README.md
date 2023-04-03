@@ -4,13 +4,13 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 
 ## How to use docker
 
-  Create the virtual machine with
+  Create the virtual machine with:
   
   ``` sh
   curl -o setup.sh https://raw.githubusercontent.com/Zeioth/termux-docker/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
   ```
 
-  Start the virtual machine with
+  Start start it with:
   
   ``` sh
   # Login with user: root PASSWORD: groovy
