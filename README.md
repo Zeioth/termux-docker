@@ -1,31 +1,33 @@
 # termux-docker
 This repo is literally the same script you have [here](https://github.com/mrp-yt/docker_and_portainer_on_dex), but it works and it is actively maintained.
 
-### Setup process
 
-* Download Termux from [F-Droid](https://www.f-droid.org/) store and install it, if you didn't alreary.
 
-* Setup Alpine VM in Termux with this one-line-install command (Thanks to egandro)
-  ```
+### How to use
+
+  Create the virtual machine with
+  
+  ``` sh
+  # It will take some time, don't worry
   curl -o setup.sh https://raw.githubusercontent.com/Zeioth/termux-docker/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
   ```
-  *This will take around 8 minutes to complete*
 
-* Run curl script. This will backup default `startqemu.sh` that got generated during VM creation and put amended on in it's place.
+  That's all. Now you can run qemu with:
+  
+  ``` sh
+  # Login with user: root PASSWORD: groovy
+  $HOME/alpine/startqemu.sh
+  ```
+
+### WIP
+
+  (OPTIONAL) Install portainer
   ```
   curl -o portainer_port.sh https://raw.githubusercontent.com/mrp-yt/docker_and_portainer_on_dex/main/portainer_port.sh &&
   chmod 755 ./portainer_port.sh &&
   ./portainer_port.sh &&
   rm portainer_port.sh
   ```
-
-* Start Alpine VM using new `startqemu.sh` file
-  ```
-  cd ~/alpine/ && ./startqemu.sh
-  ```
-  **NOTE** - Default login details:\
-  User `root`\
-  Passwd `Secret123`
 
 * Portainer-CE container install command
   ```
@@ -49,3 +51,7 @@ This repo is literally the same script you have [here](https://github.com/mrp-yt
 * This is a guide on how to setup Docker and Portainer on Samsung DeX (Android)
 * [Reddit post](https://www.reddit.com/r/SamsungDex/comments/pegoti/run_docker_containers_on_samsung_dex_bonus/)
 * [MRP YouTube video](https://youtu.be/IthUo9zVfmg)
+
+### FAQ
+
+* **Where do I run the commands?** In [Termux](https://termux.dev/en/). You can download it from [F-Droid](https://www.f-droid.org/).
