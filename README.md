@@ -10,7 +10,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   curl -o setup.sh https://raw.githubusercontent.com/Zeioth/termux-docker/main/setup.sh && chmod 755 ./setup.sh && ./setup.sh
   ```
 
-  Start start it with:
+  And start start it with:
   
   ``` sh
   # Login with user: root PASSWORD: groovy
