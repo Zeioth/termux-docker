@@ -24,7 +24,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   Run it with
   ``` sh
   # Run the container → Then open this URL in your browser to use it: http://localhost:9000
-  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running running 'docker ps'."
+  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
   If you want to access the Portainer Dashboard from another device on your same network, you will need your device local IP address. \
