@@ -1,6 +1,6 @@
 ## DESCRIPTION:
 ## This file install the necessary dependencies
-
+## NOTE: If you wanna reinstall everything, manually delete INSTALL_DIR
 
 # Change this constant to install somewhere else if you want.
 INSTALL_DIR="$HOME/alpine"
@@ -23,3 +23,4 @@ chmod +x "$INSTALL_DIR/startqemu.sh"
 # Run installqemu
 . "$INSTALL_DIR/config.env"
 expect -f "$INSTALL_DIR/installqemu.expect"
+

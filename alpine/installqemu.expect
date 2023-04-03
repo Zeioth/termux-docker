@@ -86,6 +86,9 @@ send "$env(ROOT_PASSWORD)\n"
 expect "Setup a user?"
 send "no\r"
 
+expect "WARNING: Erase the above disk(s) and continue?"
+send "y\r"
+
 expect "Please reboot"
 send "halt\r"
 
