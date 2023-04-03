@@ -29,10 +29,10 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 
   If you want to access the Portainer Dashboard from another device on your same network, you will need your device local IP address. \
   
-    ``` sh
-    # Example:
-    http://192.168.123.123:9000
-    ```
+  ``` sh
+  # Example:
+  http://192.168.123.123:9000
+  ```
 
 ## FAQ
 
