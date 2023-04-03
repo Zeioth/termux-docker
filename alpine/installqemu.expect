@@ -86,6 +86,9 @@ send "$env(ROOT_PASSWORD)\n"
 expect "\[n\]"
 send "y\r"
 
+expect "loginname"
+send "no\"
+
 expect "Please reboot"
 send "halt\r"
 
