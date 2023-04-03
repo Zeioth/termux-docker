@@ -7,8 +7,6 @@ INSTALL_DIR="$HOME/alpine"
 
 # Install dependencies - (comment if you are not on termux)
 pkg install -y expect wget qemu-utils qemu-common qemu-system-x86_64-headless openssh
-
-rm -rf "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR"
 
 # Download necessary files
