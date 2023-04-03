@@ -2,7 +2,7 @@
 This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm) and [this](https://github.com/mrp-yt/docker_and_portainer_on_dex), except it works and it is actively maintained.
 
 
-## How to use docker
+## How to use: Docker
 
   Create the virtual machine with:
   
@@ -19,7 +19,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   
   Inside this virtual machine you can use docker as you would do in a normal computer.
 
-## How to use portainer
+## How to use: Portainer
 
   Run it with
   ```
