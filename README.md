@@ -22,7 +22,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 ## How to use: Portainer
 
   Run it with
-  ```
+  ``` sd
   # Run the container → Then open this URL in your browser to use it: http://localhost:9000
   docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running running 'docker ps'."
   ```
