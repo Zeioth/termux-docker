@@ -47,16 +47,13 @@ expect "\[eth0\]"
 send "\r"
 
 expect "\[dhcp\]"
-send "none\r"
+send "\r"
 
 expect "\[no\]"
 send "\r"
 
 expect "localhost:~#"
-send "ifup -a\r"
-
-send "touch /etc/resolv.conf"
-send "echo 1.1.1.1 > /etc/resolv.conf"
+send "ifup eth0\r"
 
 expect "localhost:~#"
 send "sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk\r"
