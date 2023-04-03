@@ -34,6 +34,9 @@ spawn qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
 
 set qemuID $spawn_id
 
+send "touch /etc/resolv.conf"
+send "echo 'nameserver 1.1.1.1' > /etc/resolv.conf"
+
 expect "login:"
 send "root\r"
 
