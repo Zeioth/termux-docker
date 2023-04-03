@@ -83,9 +83,6 @@ send "$env(ROOT_PASSWORD)\n"
 expect "password:"
 send "$env(ROOT_PASSWORD)\n"
 
-expect "\[n\]"
-send "y\r"
-
 expect "Setup a user?"
 send "no\r"
 
