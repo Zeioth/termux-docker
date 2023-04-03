@@ -34,9 +34,6 @@ spawn qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
 
 set qemuID $spawn_id
 
-send "touch /etc/resolv.conf"
-send "echo 'nameserver 1.1.1.1' > /etc/resolv.conf"
-
 expect "login:"
 send "root\r"
 
@@ -56,7 +53,10 @@ expect "\[no\]"
 send "\r"
 
 expect "localhost:~#"
-send "ifup eth0\r"
+send "ifup -a\r"
+
+send "touch /etc/resolv.conf"
+send "echo 1.1.1.1 > /etc/resolv.conf"
 
 expect "localhost:~#"
 send "sed -i -E 's/(local kernel_opts)=.*/\\1=\"console=ttyS0\"/' /sbin/setup-disk\r"
