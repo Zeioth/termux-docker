@@ -43,11 +43,17 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   docker run -d -p 8000:8000 -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 6443:6443 -p 10250:10250 -p 30000:32767 --name=kubernetes --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v kubernetes_data:/data alpine/k8s:1.24.12 && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
+## How to use: Prometheus
+  ```sh
+  # Run the container → Then open this URL in your browser to use it: http://localhost:9090
+  docker run -d -p 9090:9090 -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml --name=prometheus --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v prometheus_data:/data prom/prometheus && echo " * Open http://localhost:9090 in your browser to use prometheus." && echo " * You can make sure the container is running with 'docker ps'."
+  ```
+
 ## How to use: Grafana
 
   ```sh
   # Run the container → Then open this URL in your browser to use it: http://localhost:3000
-  docker run -d -p 8000:8000 -p 3000:3000 --name=grafana --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v grafana_data:/data grafana/grafana-oss:8.5.22 && echo " * Open http://localhost:3000 in your browser to use portainer." && echo " * You can make sure the container is running with 'docker ps'."
+  docker run -d -p 8000:8000 -p 3000:3000 --name=grafana --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v grafana_data:/data grafana/grafana-oss:8.5.22 && echo " * Open http://localhost:3000 in your browser to use grafana." && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
 ## Demo
