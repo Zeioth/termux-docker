@@ -45,8 +45,8 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 
 ## How to use: Prometheus
   ```sh
-  # Run the container → Then open this URL in your browser to use it: http://localhost:9090
-  docker run -d -p 9090:9090 -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml --name=prometheus --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v prometheus_data:/data prom/prometheus && echo " * Open http://localhost:9090 in your browser to use prometheus." && echo " * You can make sure the container is running with 'docker ps'."
+  # WARNING: You must edit the command to change "/path/to/prometheus.yml" by the actual file.
+  docker run -d -p 9090:9090 -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml --name=prometheus --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v prometheus_data:/data prom/prometheus && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
 ## How to use: Grafana
