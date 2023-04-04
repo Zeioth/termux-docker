@@ -44,5 +44,6 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 * **Where do I run the commands?** In [Termux](https://termux.dev/en/). You can download it from [F-Droid](https://www.f-droid.org/).
 * **I can't run portainer/kubernetes!** You need to setup docker first, follow the steps.
 * **It is really actively maintained?** Yes. Even if for some wild reason I don't have a lot of time to fix bugs myself, I tend to revise PRs quite fast.
+* **Can I open issues?**: By general rule only PRs are allowed, but if an issue show a certain degree of reseach prior to submit it, or it is part or a reseach process, I will be glad to discuss it. Any other issue will be closed without answer.
 * **Does my device need to be rooted?** No.
 
