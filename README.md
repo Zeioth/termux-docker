@@ -38,9 +38,9 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 
   Run it with
   ```sh
-  # Included packages: kubectl, kustomize, helm, aws-cli, aws-authenticator...
-  # Port reference: https://kubernetes.io/docs/reference/networking/ports-and-protocols/
-  docker run -d -p 8000:8000 -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 6443:6443 -p 10250:10250 -p 30000:32767 --name=kubernetes --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v kubernetes_data:/data alpine/k8s:1.24.12 && echo " * You can make sure the container is running with 'docker ps'."
+  # Run this command to login interactively into the container and run commands like 'kubectl'.
+  # WARNING: This container won't do anything by itself if you make in run on background.
+  docker run -it --entrypoint /bin/sh -p 8000:8000 -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 6443:6443 -p 10250:10250 -p 30000:32767 -v kubernetes_data:/data alpine/k8s:1.24.12
   ```
 
 ## How to use: Prometheus
