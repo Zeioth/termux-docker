@@ -62,10 +62,12 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 
 # Other relevant reference data
 
-* [Kubernetes Port reference](https://kubernetes.io/docs/reference/networking/ports-and-protocols/): We are opening the necessary ports
+* [Kubernetes Port reference](https://kubernetes.io/docs/reference/networking/ports-and-protocols/): We are opening the necessary ports, but you can double check here.
 * [Kubernetes docker image reference](https://hub.docker.com/r/alpine/k8s): The image we use include Helm and other stuff you would normally use.
 * [Portainer docker image reference](https://hub.docker.com/r/portainer/portainer-ce): Noting super relevant here. Just for reference.
+* [Prometheus docker image reference](https://hub.docker.com/r/prom/prometheus): Nothing super relevant here.
 * [Grafana docker image reference](https://hub.docker.com/r/grafana/grafana/tags): Nothing super relevant here. Check [their official docs](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/) also if you want.
+
 
 ## FAQ
 
@@ -75,3 +77,4 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 * **Can I open issues?**: By general rule only PRs are allowed, but if an issue show a certain degree of reseach prior to submit it, or it is part or a reseach process, I will be glad to discuss it. Any other issue will be closed without answer.
 * **Does my device need to be rooted?** No.
 * **Do I need to run the docker images every time?** No. You can see we are using "--restart=always" which means the images will run automatically every time you run "startqemu.sh".
+* **Give me a short explanation about everything**: The setup.sh script uses qemu to create a virtual machine based on an alpine iso image, then docker is installed on it. From this point you can optionally install the rest of the software using docker. Docker run containers. Kubernetes is used for automated deployment. Portainer allow you to manage containers visually. Prometheus can be connected to everything to gather data. Grafana is a frontent for prometheus, mostly used to check logs.
