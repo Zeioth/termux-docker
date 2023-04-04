@@ -34,10 +34,24 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   http://192.168.123.123:9000
   ```
 
+## How to use: Kubernetes
+
+  Run it with
+  ```sh
+  # Port reference: https://kubernetes.io/docs/reference/networking/ports-and-protocols/
+  docker run -d -p 8000:8000 -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 6443:6443 -p 10250:10250 -p 30000:32767 --name=kubernetes --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v kubernetes_data:/data alpine/k8s && echo " * You can make sure the container is running with 'docker ps'."
+  
+  ```
 
 ## Demo
 
 ![doc](https://user-images.githubusercontent.com/3357792/229592523-72232b5a-02ee-478a-9d25-420472fbce47.jpg)
+
+# Other relevant reference data
+
+* [Kubernetes Port reference](https://kubernetes.io/docs/reference/networking/ports-and-protocols/): We are opening the necessary ports
+* [Kubernetes docker image reference](https://hub.docker.com/r/alpine/k8s): The image we use include Helm and other stuff you would normally use.
+* [Portainer docker image reference](https://hub.docker.com/r/portainer/portainer-ce): Noting super relevant here. Just for reference.
 
 ## FAQ
 
@@ -46,4 +60,4 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 * **It is really actively maintained?** Yes. Even if for some wild reason I don't have a lot of time to fix bugs myself, I tend to revise PRs quite fast.
 * **Can I open issues?**: By general rule only PRs are allowed, but if an issue show a certain degree of reseach prior to submit it, or it is part or a reseach process, I will be glad to discuss it. Any other issue will be closed without answer.
 * **Does my device need to be rooted?** No.
-
+* **Do I need to run the docker images every time?** No, you can see we are using "--restart=always" which means the images will run automatically every time you run "startqemu.sh".
