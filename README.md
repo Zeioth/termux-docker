@@ -65,7 +65,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 * [Kubernetes Port reference](https://kubernetes.io/docs/reference/networking/ports-and-protocols/): We are opening the necessary ports, but you can double check here.
 * [Kubernetes docker image reference](https://hub.docker.com/r/alpine/k8s): The image we use include Helm and other stuff you would normally use.
 * [Portainer docker image reference](https://hub.docker.com/r/portainer/portainer-ce): Noting super relevant here. Just for reference.
-* [Prometheus docker image reference](https://hub.docker.com/r/prom/prometheus): Nothing super relevant here.
+* [Prometheus docker image reference](https://hub.docker.com/r/prom/prometheus): You can find an example prometheus.yaml file in [the prometheus github repo](https://github.com/prometheus/prometheus/blob/main/documentation/examples/prometheus.yml).
 * [Grafana docker image reference](https://hub.docker.com/r/grafana/grafana/tags): Nothing super relevant here. Check [their official docs](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/) also if you want.
 
 
