@@ -43,6 +43,10 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   docker run -d -p 8000:8000 -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 6443:6443 -p 10250:10250 -p 30000:32767 --name=kubernetes --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v kubernetes_data:/data alpine/k8s:1.24.12 && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
+## How to use: Grafana
+
+    Work in progress, come back later
+
 ## Demo
 
 ![doc](https://user-images.githubusercontent.com/3357792/229592523-72232b5a-02ee-478a-9d25-420472fbce47.jpg)
