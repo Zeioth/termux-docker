@@ -24,7 +24,7 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   Run it with
   ``` sh
   # Run the container → Then open this URL in your browser to use it: http://localhost:9000
-  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running with 'docker ps'."
+  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/docker-volumes/portainer:/home portainer/portainer-ce && echo " * Open http://localhost:9000 in your browser to use portainer." && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
   If you want to access the Portainer Dashboard from another device on your same network, you will need your device local IP address.
@@ -40,21 +40,21 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
   ```sh
   # Run this command to login interactively into the container and run commands like 'kubectl'.
   # WARNING: This container won't do anything by itself if you make in run on background.
-  docker run -it --entrypoint /bin/sh -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 30001:32767 -v kubernetes_data:/data -v /var/run/docker.sock:/var/run/docker.sock alpine/k8s:1.24.12
+  docker run -it --entrypoint /bin/sh -p 6443:6443 -p 2379:2380 -p 10250:10250 -p 10259:10259 -p 10257:10257 -p 30001:32767 -v ~/docker-volumes/kubernetes:/home -v /var/run/docker.sock:/var/run/docker.sock alpine/k8s:1.24.12
   ```
 
 ## How to use: Prometheus
   ```sh
   # WARNING: You must edit the command to change "/path/to/prometheus.yml" by the actual file.
   # See: https://github.com/prometheus/prometheus/blob/main/documentation/examples/prometheus.yml
-  docker run -d -p 9090:9090 -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml --name=prometheus --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v prometheus_data:/data prom/prometheus && echo " * You can make sure the container is running with 'docker ps'."
+  docker run -d -p 9090:9090 -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml --name=prometheus --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/docker-volumes/prometheus:/home prom/prometheus && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
 ## How to use: Grafana
 
   ```sh
   # Run the container → Then open this URL in your browser to use it: http://localhost:3000
-  docker run -d -p 3000:3000 --name=grafana --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v grafana_data:/data grafana/grafana-oss:8.5.22 && echo " * Open http://localhost:3000 in your browser to use grafana." && echo " * You can make sure the container is running with 'docker ps'."
+  docker run -d -p 3000:3000 --name=grafana --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/docker-volumes/grafana:/home grafana/grafana-oss:8.5.22 && echo " * Open http://localhost:3000 in your browser to use grafana." && echo " * You can make sure the container is running with 'docker ps'."
   ```
 
 ## Demo
@@ -79,4 +79,4 @@ This repo is a combination of [this](https://github.com/egandro/docker-qemu-arm)
 * **Does my device need to be rooted?** No.
 * **Do I need to run the docker images every time?** No. You can see we are using "--restart=always" which means the images will run automatically every time you run "startqemu.sh".
 * **Give me a short explanation about everything** The setup.sh script uses qemu to create a virtual machine based on an alpine iso image, then docker is installed on it. From this point you can optionally install the rest of the software using docker. Docker run containers. Kubernetes is used for automated deployment. Portainer allow you to manage containers visually. Prometheus can be connected to everything to gather data. Grafana is a frontent for prometheus, mostly used to check logs.
-* **How do I make changes in a container permanent?** You can see when we use 'docker run' we are always using the -v parameter. That's a volume. Let's imagine we want to run the kubernetes container with a volume. You can do something like '-v $HOME/workspaces/kubernetes:$HOME/workspaces/kubernetes', that way the changes you make inside the '~/workspaces/kubernetes' directory of the container, will remain under termux $HOME/workspaces/kubernetes, even after you stop the container. Handy!
+* **How do I make changes in a container permanent?** You can see when we use 'docker run' we are always using the -v parameter. That's a volume. After you exit your container, volumes will remain. By default we use ~/docker-volumes/container-name. Remember this IS inside the qemu virtual machine, NOT in your Termux directories.
